@@ -103,7 +103,7 @@ The 325.27 V peak value comes from:
 
 V_peak = V_RMS × √2
 
-\[ V\_{peak}=230`\sqrt{2}`{=tex}`\approx`{=tex}325.27V \]
+V peak = 230 × √2 ≈ 325.27 V
 
 ### Transformer model
 
@@ -131,7 +131,7 @@ The simulated secondary peak voltage was:
 
 Converting this back to RMS:
 
-\[ V\_{RMS}=`\frac{12.71}{\sqrt{2}}`{=tex}`\approx`{=tex}8.99V \]
+V RMS = 12.71 ÷ √2 ≈ 8.99 V
 
 This agrees closely with the intended 9 V RMS secondary.
 
@@ -152,9 +152,9 @@ full-wave pulsating DC waveform.
 The input frequency is 50 Hz, so the rectified waveform has a ripple
 frequency of:
 
-\[ f\_{ripple}=2f\_{input} \]
+Ripple frequency = 2 × input frequency
 
-\[ f\_{ripple}=2(50)=100Hz \]
+Ripple frequency = 2 × 50 Hz = 100 Hz
 
 ### Measured result
 
@@ -196,17 +196,16 @@ For the filter-stage measurement, a **1 kΩ load** was used.
 
 The ripple was calculated as:
 
-\[ V\_{ripple}=V\_{max}-V\_{min} \]
+Ripple voltage = maximum voltage − minimum voltage
 
-\[ V\_{ripple}=11.87-11.43 \]
+Ripple voltage = 11.87 V − 11.43 V
 
-\[ `\boxed{V_{ripple}=0.44V_{pp}}`{=tex} \]
+Ripple voltage = 0.44 V peak-to-peak
 
 The approximate ripple relationship for a capacitor-input full-wave
 rectifier is:
 
-\[ `\Delta `{=tex}V`\approx`{=tex}`\frac{I_{load}}{f_{ripple}C}`{=tex}
-\]
+Approximate ripple voltage = load current ÷ (ripple frequency × capacitance)
 
 This also matched the behavior observed during the simulation:
 increasing the load current increased the capacitor ripple, while
@@ -235,7 +234,7 @@ The series resistor limits the current supplied to the regulator.
 
 The current divides between the load and the Zener:
 
-\[ I_R=I_L+I_Z \]
+Current through the series resistor = load current + Zener current
 
 where:
 
@@ -258,11 +257,11 @@ was:
 
 Therefore, the final output was approximately:
 
-\[ `\boxed{5.1V DC}`{=tex} \]
+Approximately 5.1 V DC
 
 with a measured ripple of only:
 
-\[ `\boxed{0.01V_{pp}}`{=tex} \]
+0.01 V peak-to-peak
 
 under the tested conditions.
 
@@ -293,7 +292,7 @@ Vmax = 11.87 V
 Vmin = 11.43 V
 ```
 
-\[ V\_{ripple}=0.44V\_{pp} \]
+Ripple voltage = 0.44 V peak-to-peak
 
 ### Final regulated output
 
@@ -302,13 +301,14 @@ Vmax = 5.12 V
 Vmin = 5.11 V
 ```
 
-\[ V\_{ripple}=0.01V\_{pp} \]
+
+Ripple voltage = 0.01 V peak-to-peak
 
 The measured ripple reduction was:
 
-\[ `\frac{0.44-0.01}{0.44}`{=tex}`\times100`{=tex} \]
+((0.44 − 0.01) ÷ 0.44) × 100
 
-\[ `\boxed{\approx97.7\%}`{=tex} \]
+Approximately 97.7%
 
 This was one of the most useful observations from the simulation: the
 capacitor filter removes most of the large voltage variation from the
@@ -330,7 +330,7 @@ The Zener power dissipation was measured under several load conditions.
 
 The maximum measured Zener power was:
 
-\[ `\boxed{341.8mW}`{=tex} \]
+341.8 mW
 
 The highest Zener power occurred under the no-load condition.
 
