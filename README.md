@@ -12,7 +12,8 @@ The main focus of the project was to observe how each stage changes the
 waveform and how much the final regulator reduces the remaining voltage
 ripple.
 
-![Final Schematic](final_schematic.png)
+<img width="1860" height="863" alt="final_schematic" src="https://github.com/user-attachments/assets/31523bd4-c970-4e14-852b-985b932ef6ca" />
+
 
 ------------------------------------------------------------------------
 
@@ -100,7 +101,7 @@ SINE(0 325.27 50)
 
 The 325.27 V peak value comes from:
 
-\[ V\_{peak}=V\_{RMS}`\sqrt{2}`{=tex} \]
+V_peak = V_RMS × √2
 
 \[ V\_{peak}=230`\sqrt{2}`{=tex}`\approx`{=tex}325.27V \]
 
@@ -109,14 +110,20 @@ The 325.27 V peak value comes from:
 Instead of using a dedicated transformer component, the transformer was
 modeled using two coupled inductors.
 
-  Parameter                          Value
-  ---------------------------- -----------
-  Primary inductance                  20 H
-  Secondary inductance             30.6 mH
-  Coupling coefficient                   1
-  Primary voltage                230 V RMS
-  Intended secondary voltage       9 V RMS
-  Frequency                          50 Hz
+
+<img width="1394" height="817" alt="Step_down_transformer" src="https://github.com/user-attachments/assets/86bc58d5-188f-4f18-90ff-0d2fc169b320" />
+
+<br>
+
+
+   Parameter                          Value<br>
+   ---------------------------- -----------<br>
+ - Primary inductance                  20 H<br>
+ - Secondary inductance             30.6 mH<br>
+ - Coupling coefficient                   1<br>
+ - Primary voltage                230 V RMS<br>
+ - Intended secondary voltage       9 V RMS<br>
+ - Frequency                          50 Hz<br>
 
 The simulated secondary peak voltage was:
 
@@ -134,6 +141,10 @@ This agrees closely with the intended 9 V RMS secondary.
 
 The transformer secondary is connected to a four-diode bridge using
 **1N914** diode models.
+
+
+<img width="1016" height="878" alt="Full_Wave_Bridge_Rectifier" src="https://github.com/user-attachments/assets/d8d0ab22-9faf-4e88-a84e-ad86dcb37bf1" />
+
 
 The bridge rectifier uses both halves of the AC waveform and produces a
 full-wave pulsating DC waveform.
@@ -158,12 +169,17 @@ After the bridge rectifier, the measured peak voltage was:
 The small difference is associated with the diode behavior in the
 bridge.
 
+
 ------------------------------------------------------------------------
 
 # 3. Capacitor Filter
 
 A **500 µF capacitor** was connected across the rectifier output to
 smooth the pulsating DC.
+
+
+<img width="1047" height="612" alt="Capacitor_Filter" src="https://github.com/user-attachments/assets/48cc8edb-d3fa-4be9-81b2-8a6411c0b80d" />
+
 
 The capacitor charges near the peaks of the rectified waveform and
 discharges into the load between peaks.
@@ -172,11 +188,11 @@ For the filter-stage measurement, a **1 kΩ load** was used.
 
 ### Measured capacitor voltage
 
-  Measurement           Result
-  ----------------- ----------
-  Maximum voltage      11.87 V
-  Minimum voltage      11.43 V
-  Ripple              0.44 Vpp
+  Measurement           Result<br>
+  ----------------- ----------<br>
+  - Maximum voltage      11.87 V<br>
+  - Minimum voltage      11.43 V<br>
+  - Ripple              0.44 Vpp<br>
 
 The ripple was calculated as:
 
@@ -201,6 +217,10 @@ increasing the capacitance reduced it.
 # 4. Zener Voltage Regulator
 
 The filtered DC was then connected to a simple Zener shunt regulator.
+
+
+<img width="848" height="815" alt="Zener_voltage_regulator" src="https://github.com/user-attachments/assets/a81bfe91-bee4-47aa-bc9d-347fec3f245c" />
+
 
 The regulator uses:
 
@@ -245,6 +265,19 @@ with a measured ripple of only:
 \[ `\boxed{0.01V_{pp}}`{=tex} \]
 
 under the tested conditions.
+
+Transformer Secondary and Rectifier Output Waveforms
+
+<img width="1847" height="424" alt="Screenshot 2026-10-06 174256" src="https://github.com/user-attachments/assets/72c8427c-435e-489a-896b-e2cbe722e8ef" />
+
+
+
+
+Comparison of Rectified DC and Final Regulated Output
+
+<img width="1844" height="427" alt="Screenshot 2026-10-06 174335" src="https://github.com/user-attachments/assets/6d3b6679-d897-4b34-bf68-74d5c656599f" />
+
+
 
 ------------------------------------------------------------------------
 
